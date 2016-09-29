@@ -7,6 +7,7 @@
     $scope.menu = "";
  	$scope.check = function() {
  		var menulist = $scope.menu.split(',');
+ 		 $scope.msgcolor = "green";
 
  		// first check for whitespaces and remove all items from menulist if not min. one char
  		for (var i = menulist.length - 1; i >= 0; i--) {
@@ -15,12 +16,17 @@
  		}
  		
  		// create message
-	 	if ( menulist.length <= 0 || $scope.menu.length <= 0 )
+	 	if ( menulist.length <= 0 || $scope.menu.length <= 0 ){
 	 	 $scope.message = "Please enter data first";
-	 	else if(menulist.length >=4 )
+	 	 $scope.msgcolor = "red";
+	 	}
+	 	else if(menulist.length >=4 ){
 	 	 $scope.message = "Too much!";
-	 	else
+	 	}
+	 	else{
 	 	 $scope.message = "Enjoy!";
+	 	 
+	 	}
  	}
 
  }
