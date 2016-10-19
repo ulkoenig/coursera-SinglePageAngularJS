@@ -1,0 +1,12 @@
+<h3 ng-show="foundList.length >= 1">Found Items</h3>
+<ol>
+  <li ng-repeat="item in foundList">
+    <div class="row">
+      <div class="col-md-3">{{ item.name }},</div>
+      <div class="col-md-1">{{ item.short_name }},</div>
+      <div class="col-md-5">{{item.description}}</div>
+      <div class="col-md-3"><button ng-click="badRemove({item: $index});">Don't want this one!</button></div>
+    </div>
+  </li>
+</ol>
+<div class="error" ng-if="narrow.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>
